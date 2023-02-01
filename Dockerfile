@@ -33,6 +33,6 @@ RUN wget -q https://github.com/paas-dashboard/mysql-dashboard-portal/releases/do
     tar -xzf mysql-dashboard-portal.tar.gz && \
     rm -rf mysql-dashboard-portal.tar.gz
 
-EXPOSE 10004
+EXPOSE 10008
 
 CMD ["/usr/bin/dumb-init", "/opt/mysql-dashboard/mysql-dashboard"]

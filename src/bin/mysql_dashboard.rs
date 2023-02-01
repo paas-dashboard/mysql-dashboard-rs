@@ -24,7 +24,7 @@ async fn main() -> std::io::Result<()> {
     util::init();
     HttpServer::new(|| {
         let cors = Cors::permissive();
-        App::new().wrap(cors).service(actix_files::Files::new("/", "static").show_files_listing()).configure(config)
+        App::new().wrap(cors).configure(config).service(actix_files::Files::new("/", "static").show_files_listing())
     })
         .bind(("0.0.0.0", 10008))?
         .run()
